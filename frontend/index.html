@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GameVault | Catálogo de videojuegos</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="cabecera">
+    <div class="cabecera-texto">
+      <h1>GameVault</h1>
+      <p>Catálogo de videojuegos</p>
+    </div>
+    <div id="estadisticas" class="estadisticas"></div>
+  </header>
+
+  <section class="filtros">
+    <input id="buscador" type="search" placeholder="Buscar por título...">
+
+    <select id="filtro-genero">
+      <option value="">Todos los géneros</option>
+    </select>
+
+    <select id="filtro-orden">
+      <option value="titulo">Ordenar: A-Z</option>
+      <option value="rating">Mejor valorados</option>
+      <option value="nuevo">Más recientes</option>
+      <option value="precio-asc">Precio: menor a mayor</option>
+      <option value="precio-desc">Precio: mayor a menor</option>
+    </select>
+  </section>
+
+  <main>
+    <p id="mensaje" class="mensaje" hidden></p>
+    <div id="catalogo" class="catalogo"></div>
+  </main>
+
+  <!-- Ventana con el detalle del juego (se llena desde JS) -->
+  <div id="modal" class="modal" hidden>
+    <div class="modal-caja">
+      <button id="modal-cerrar" class="modal-cerrar" aria-label="Cerrar">&times;</button>
+      <div id="modal-contenido"></div>
+    </div>
+  </div>
+
+  <!-- El orden importa: cada archivo usa funciones del anterior -->
+  <script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

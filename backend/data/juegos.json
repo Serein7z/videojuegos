@@ -1,0 +1,721 @@
+[
+  {
+    "titulo": "The Legend of Zelda: Ocarina of Time (1998)",
+    "descripcion": "As a young boy, Link is tricked by Ganondorf, the King of the Gerudo Thieves. The evil human uses Link to gain access to the Sacred Realm, where he places his tainted hands on Triforce and transforms the beautiful Hyrulean landscape into a barren wasteland. Link is determined to fix the problems he helped to create, so with the help of Rauru he travels through time gathering the powers of the Seve",
+    "generos": [
+      "Action",
+      "Adventure",
+      "RPG"
+    ],
+    "plataformas": [
+      "Nintendo Switch",
+      "Nintendo 64"
+    ],
+    "precio": 29.99,
+    "rating": 4.37,
+    "imagen": "https://media.rawg.io/media/games/3a0/3a0c8e9ed3a711c542218831b893a0fa.jpg",
+    "fechaLanzamiento": "1998-11-21",
+    "resenas": []
+  },
+  {
+    "titulo": "Soulcalibur (1998)",
+    "descripcion": "The sequel to Soul Edge arrived in video arcades a year later, with an exclusive porting to the Dreamcast console in 1999. The plot is set two–three years after the first game's and the title is derived from Soul Calibur, a legendary weapon which opposes the evil of Soul Edge. Soul Calibur was also known as Soul Blade as an updated version which released on the Sega Dreamcast. This title would com",
+    "generos": [
+      "Fighting"
+    ],
+    "plataformas": [
+      "Dreamcast",
+      "Xbox 360"
+    ],
+    "precio": 39.99,
+    "rating": 0,
+    "imagen": "",
+    "fechaLanzamiento": "1998-07-30",
+    "resenas": []
+  },
+  {
+    "titulo": "Soulcalibur",
+    "descripcion": "Soulcalibur (ソウルキャリバー, Sōrukyaribā) is a weapon-based 3D fighting game developed by Project Soul and produced by Namco. It is the second game in the Soulcalibur series, preceded by Soul Edge in December 1995. Originally released in arcades in July 1998, it ran on the Namco System 12 hardware. It was ported to the Dreamcast in 1999 with new features and improved graphics. The North American version",
+    "generos": [
+      "Action",
+      "Fighting"
+    ],
+    "plataformas": [
+      "Xbox One",
+      "iOS",
+      "Xbox 360",
+      "Android",
+      "Dreamcast"
+    ],
+    "precio": 19.99,
+    "rating": 4.39,
+    "imagen": "https://media.rawg.io/media/games/743/7430f1846ba6ce836f169d936c89819e.jpg",
+    "fechaLanzamiento": "1998-07-30",
+    "resenas": []
+  },
+  {
+    "titulo": "Baldur's Gate III",
+    "descripcion": "Gather your party, and return to the Forgotten Realms in a tale of fellowship and betrayal, sacrifice and survival, and the lure of absolute power.\r\n\r\nMysterious abilities are awakening inside you, drawn from a Mind Flayer parasite planted in your brain. Resist, and turn darkness against itself. Or embrace corruption, and become ultimate evil.\r\n\r\nFrom the creators of Divinity: Original Sin 2 comes",
+    "generos": [
+      "Adventure",
+      "RPG",
+      "Strategy"
+    ],
+    "plataformas": [
+      "macOS",
+      "PC",
+      "Xbox Series S/X",
+      "PlayStation 5"
+    ],
+    "precio": 0,
+    "rating": 4.42,
+    "imagen": "https://media.rawg.io/media/games/699/69907ecf13f172e9e144069769c3be73.jpg",
+    "fechaLanzamiento": "2023-08-03",
+    "resenas": []
+  },
+  {
+    "titulo": "Metroid Prime",
+    "descripcion": "Metroid Prime is a first-person action-adventure video game developed by Retro Studios and Nintendo for the GameCube video game console. It was released in North America on November 17, 2002, and in Japan and Europe the following year. Metroid Prime is the fifth main installment in the Metroid series, and the first Metroid game to use 3D computer graphics. Because exploration takes precedence over",
+    "generos": [
+      "Action",
+      "Shooter",
+      "Adventure"
+    ],
+    "plataformas": [
+      "Wii",
+      "GameCube"
+    ],
+    "precio": 14.99,
+    "rating": 4.35,
+    "imagen": "https://media.rawg.io/media/games/c86/c86bc047ba949959a90fe24209d59439.jpg",
+    "fechaLanzamiento": "2002-11-17",
+    "resenas": []
+  },
+  {
+    "titulo": "Perfect Dark",
+    "descripcion": "(Online Interactions Not Rated by the ESRB) Buy the full version of Perfect Dark to unlock the classic package in its entirety. Experience every twist of the story, every stray bullet, every gadget and upgrade, every newly polished texture – and top it all off with full access to multiplayer modes now playable across the globe through Xbox LIVE. There are no refunds for this item. For more informa",
+    "generos": [
+      "Action",
+      "Shooter"
+    ],
+    "plataformas": [
+      "Xbox 360",
+      "Nintendo 64"
+    ],
+    "precio": 14.99,
+    "rating": 3.98,
+    "imagen": "https://media.rawg.io/media/games/f62/f62d090119e5ff05c59036480123fd83.jpg",
+    "fechaLanzamiento": "2000-05-22",
+    "resenas": []
+  },
+  {
+    "titulo": "Super Mario Odyssey",
+    "descripcion": "Super Mario Odyssey is a 3D platform game, a part of Nintendo’s Super Mario series. \n\n###Story \nThe game follows Mario on his quest to save Princess Peach from her forced marriage with Bowser. The game starts with Mario fighting Bowser on its aircraft. Bowers knock Mario off the ship and shreds his cap into pieces. Mario awakens in the Cap Kingdom inhabited with hat-like spirits and befriends one ",
+    "generos": [
+      "Arcade",
+      "Platformer"
+    ],
+    "plataformas": [
+      "Nintendo Switch"
+    ],
+    "precio": 14.99,
+    "rating": 4.42,
+    "imagen": "https://media.rawg.io/media/games/267/267bd0dbc496f52692487d07d014c061.jpg",
+    "fechaLanzamiento": "2017-10-27",
+    "resenas": []
+  },
+  {
+    "titulo": "Super Mario Galaxy 2",
+    "descripcion": "Mario is invited to Princess Peach's castle, and on his way notices a\nstrange light in the grass. As he peers cautiously through the reeds, he\nsees a small, lost Luma. With the baby Luma tucked safely under his cap,\nMario rushes on to the castle. But when he gets there, something\nunexpected is waiting for him...\n\nCollect stars as Mario travels from galaxy to galaxy, working through\nvarious levels—",
+    "generos": [
+      "Platformer"
+    ],
+    "plataformas": [
+      "Nintendo Switch",
+      "Wii",
+      "Wii U"
+    ],
+    "precio": 19.99,
+    "rating": 4.33,
+    "imagen": "https://media.rawg.io/media/games/578/578ff52303d0e2563e28a4149f1485c2.jpeg",
+    "fechaLanzamiento": "2010-05-23",
+    "resenas": []
+  },
+  {
+    "titulo": "Super Mario Galaxy",
+    "descripcion": "Become Mario as he traverses gravity-bending galaxies, traveling in and out of gravitational fields by blasting from planet to planet. Control Mario with the Wii Remote™ and Nunchuk™. Power-up to reach inaccessible areas. Collect Star Bits to either stun enemies or feed Lumas.",
+    "generos": [
+      "Platformer"
+    ],
+    "plataformas": [
+      "Nintendo Switch",
+      "Wii"
+    ],
+    "precio": 14.99,
+    "rating": 4.35,
+    "imagen": "https://media.rawg.io/media/games/936/936f0ffac0b3c9f5c8d185f610ed2631.jpg",
+    "fechaLanzamiento": "2007-11-01",
+    "resenas": []
+  },
+  {
+    "titulo": "The Legend of Zelda: Breath of the Wild",
+    "descripcion": "The Legend of Zelda: Breath of the Wild is an adventure game developed by Nintendo. It is the nineteenth installment in the series.\n\nAfter awakening from a hundred year sleep, memoryless Link hears a mysterious female voice that guides him to a destroyed kingdom of Hyrule. He finds a Wiseman who says that a ruthless creature, Calamity Ganon, was imprisoned for 100 years. Even though the creature i",
+    "generos": [
+      "Action",
+      "Adventure",
+      "RPG"
+    ],
+    "plataformas": [
+      "Nintendo Switch",
+      "Wii U"
+    ],
+    "precio": 0,
+    "rating": 4.47,
+    "imagen": "https://media.rawg.io/media/games/cc1/cc196a5ad763955d6532cdba236f730c.jpg",
+    "fechaLanzamiento": "2017-03-03",
+    "resenas": []
+  },
+  {
+    "titulo": "Half-Life 2: Update",
+    "descripcion": "A completely free and extensive community-developed update for Half-Life 2 featuring beautiful lighting, countless bug fixes, and a brand new Community Commentary Mode. With Half-Life 2: Update, there’s never been a better time to revisit City 17.",
+    "generos": [
+      "Shooter"
+    ],
+    "plataformas": [
+      "PC"
+    ],
+    "precio": 9.99,
+    "rating": 4.13,
+    "imagen": "https://media.rawg.io/media/screenshots/bb7/bb7463d103dc40f6f3a3c9ac3b4b11a5.jpg",
+    "fechaLanzamiento": "2015-03-27",
+    "resenas": []
+  },
+  {
+    "titulo": "The Legend of Zelda: Tears of the Kingdom",
+    "descripcion": "An epic adventure across the land and skies of Hyrule awaits in The Legend of Zelda™: Tears of the Kingdom for Nintendo Switch™. The adventure is yours to create in a world fueled by your imagination. In this sequel to The Legend of Zelda: Breath of the Wild, you’ll decide your own path through the sprawling landscapes of Hyrule and the mysterious islands floating in the vast skies above. Can you ",
+    "generos": [
+      "Action",
+      "Adventure"
+    ],
+    "plataformas": [
+      "Nintendo Switch"
+    ],
+    "precio": 59.99,
+    "rating": 4.36,
+    "imagen": "https://media.rawg.io/media/games/556/55684bfd048706f4266d331d70050b37.jpg",
+    "fechaLanzamiento": "2023-05-12",
+    "resenas": []
+  },
+  {
+    "titulo": "Tekken 3",
+    "descripcion": "Tekken 3 (Japanese: 鉄拳3) is a fighting game, the third installment in the Tekken series. It was released in arcades in March 1997, and for the PlayStation in 1998. The original arcade version of the game was released in 2005 for the PlayStation 2 as part of Tekken 5's Arcade History mode.\nTekken 3 was the first game released on Namco System 12 hardware (the original two Tekken games used System 11",
+    "generos": [
+      "Fighting"
+    ],
+    "plataformas": [
+      "PlayStation"
+    ],
+    "precio": 39.99,
+    "rating": 4.36,
+    "imagen": "https://media.rawg.io/media/games/4aa/4aa1440932f4a12d9d0ea70a5e2164f6.jpg",
+    "fechaLanzamiento": "1997-03-20",
+    "resenas": []
+  },
+  {
+    "titulo": "GoldenEye 007 (1997)",
+    "descripcion": "GoldenEye 007 is a first-person shooter video game developed by Rare and based on the 1995 James Bond film GoldenEye. It was released for the Nintendo 64 video game console in August 1997. The game features a single-player campaign in which players assume the role of British Secret Intelligence Service agent James Bond as he fights to prevent a criminal syndicate from using a satellite weapon agai",
+    "generos": [
+      "Shooter"
+    ],
+    "plataformas": [
+      "Nintendo 64"
+    ],
+    "precio": 59.99,
+    "rating": 4.36,
+    "imagen": "https://media.rawg.io/media/games/5a1/5a145fe3002fc988140f7f00edcb9715.jpg",
+    "fechaLanzamiento": "1997-08-23",
+    "resenas": []
+  },
+  {
+    "titulo": "Gran Turismo",
+    "descripcion": "Gran Turismo is a sim racing video game designed by Kazunori Yamauchi. Gran Turismo was developed by Polys Entertainment and published by Sony Computer Entertainment in 1997 for the PlayStation video game console. The game's development group was established as Polyphony Digital in 1998.\nAfter five years of development time, it was well-received publicly and critically, shipping a total of 10.85 m",
+    "generos": [
+      "Racing"
+    ],
+    "plataformas": [
+      "PlayStation"
+    ],
+    "precio": 59.99,
+    "rating": 4.3,
+    "imagen": "https://media.rawg.io/media/games/5ac/5ac568dcf73aedba140bcca2a8a5eb09.jpg",
+    "fechaLanzamiento": "1997-12-22",
+    "resenas": []
+  },
+  {
+    "titulo": "Metal Gear Solid 2: Sons of Liberty",
+    "descripcion": "Since the incident on Shadow Moses Island, Metal Gear's top-secret technology has been leaked into the black market through the machinations of Revolver Ocelot. As a result, countless variations of Metal Gears have sprung up in every corner of the globe, making the weapon an increasingly common component of the armed forces of nuclear powers. \r\nIn the midst of all of this, Solid Snake, now a membe",
+    "generos": [
+      "Action",
+      "Shooter"
+    ],
+    "plataformas": [
+      "PlayStation 2",
+      "PlayStation 3",
+      "PS Vita",
+      "Xbox 360",
+      "Xbox"
+    ],
+    "precio": 29.99,
+    "rating": 4.34,
+    "imagen": "https://media.rawg.io/media/games/0f1/0f105a3d3ba6225269c4a08b43ecbb73.jpg",
+    "fechaLanzamiento": "2001-11-12",
+    "resenas": []
+  },
+  {
+    "titulo": "Uncharted 2: Among Thieves",
+    "descripcion": "In Uncharted 2, as in the other Uncharted games, the hero is the adventurer and hidden treasure seeker Nathan Drake. Riddles are no less important part of the gameplay than fights, chases and travels through exotic landscapes and hard-to-reach places.\nDrake is well prepared for all this. He is provided with ammunition - he picks them up from the corpses of killed enemies, ably uses shelters, can r",
+    "generos": [
+      "Action",
+      "Shooter"
+    ],
+    "plataformas": [
+      "PlayStation 4",
+      "PlayStation 3"
+    ],
+    "precio": 59.99,
+    "rating": 4.38,
+    "imagen": "https://media.rawg.io/media/games/74b/74b239f6ef0216a2f66e652d54abb2e6.jpg",
+    "fechaLanzamiento": "2009-10-13",
+    "resenas": []
+  },
+  {
+    "titulo": "Half-Life",
+    "descripcion": "Half-Life is the original game in the series. Being a revolutionary at the time, we follow the story of Gordon Freeman - a silent scientist at the facility called Black Mesa. Arriving late at work and hastily doing his routine he runs into the experiment field. However, the experiment goes completely wrong and opens a portal to a completely different dimension called Xen. The laboratory is destroy",
+    "generos": [
+      "Action",
+      "Shooter"
+    ],
+    "plataformas": [
+      "Linux",
+      "macOS",
+      "PC",
+      "Dreamcast",
+      "PlayStation 2"
+    ],
+    "precio": 59.99,
+    "rating": 4.38,
+    "imagen": "https://media.rawg.io/media/games/6c5/6c55e22185876626881b76c11922b073.jpg",
+    "fechaLanzamiento": "1998-11-19",
+    "resenas": []
+  },
+  {
+    "titulo": "Half-Life 2",
+    "descripcion": "Gordon Freeman became the most popular nameless and voiceless protagonist in gaming history. He is painted as the most famous scientist and a hero within the world of Half-Life, and for a good reason. In the first game he saved the planet from alien invasion, this time, when the invasion is already begun, the world needs his help one more time. And you, as a player, will help this world to survive",
+    "generos": [
+      "Action",
+      "Shooter"
+    ],
+    "plataformas": [
+      "PC",
+      "macOS",
+      "Xbox 360",
+      "Linux",
+      "Xbox",
+      "Android"
+    ],
+    "precio": 0,
+    "rating": 4.47,
+    "imagen": "https://media.rawg.io/media/games/b8c/b8c243eaa0fbac8115e0cdccac3f91dc.jpg",
+    "fechaLanzamiento": "2004-11-16",
+    "resenas": []
+  },
+  {
+    "titulo": "BioShock",
+    "descripcion": "FPS with RPG elements, Bioshock invites players to experience horrors of underwater isolation in the city of Rapture, the failed project of the better future. After surviving the plane crash, the protagonist has only one way to go – to the giant lighthouse that opens a way to the underwater utopia. Players will have to unravel the complicated history of Rapture, relying only on themselves, their g",
+    "generos": [
+      "Action",
+      "Shooter"
+    ],
+    "plataformas": [
+      "PlayStation 3",
+      "macOS",
+      "PC",
+      "Xbox 360"
+    ],
+    "precio": 0,
+    "rating": 4.36,
+    "imagen": "https://media.rawg.io/media/games/bc0/bc06a29ceac58652b684deefe7d56099.jpg",
+    "fechaLanzamiento": "2007-08-21",
+    "resenas": []
+  },
+  {
+    "titulo": "Red Dead Redemption 2",
+    "descripcion": "America, 1899. The end of the wild west era has begun as lawmen hunt down the last remaining outlaw gangs. Those who will not surrender or succumb are killed. \r\n\r\nAfter a robbery goes badly wrong in the western town of Blackwater, Arthur Morgan and the Van der Linde gang are forced to flee. With federal agents and the best bounty hunters in the nation massing on their heels, the gang must rob, ste",
+    "generos": [
+      "Action"
+    ],
+    "plataformas": [
+      "PC",
+      "PlayStation 4",
+      "Xbox One"
+    ],
+    "precio": 59.99,
+    "rating": 4.59,
+    "imagen": "https://media.rawg.io/media/games/511/5118aff5091cb3efec399c808f8c598f.jpg",
+    "fechaLanzamiento": "2018-10-26",
+    "resenas": []
+  },
+  {
+    "titulo": "Grand Theft Auto IV: Complete Edition",
+    "descripcion": "<strong>PLEASE NOTE:  Microsoft no longer supports creating Games for Windows-LIVE accounts within Grand Theft Auto IV. You can create an account through account.xbox.com and then log into your account in game. </strong><br/><br/>This standalone retail title spans three distinct stories, interwoven to create one of the most unique and engaging single-player experiences of this generation.<br/><br/",
+    "generos": [
+      "Action",
+      "Adventure"
+    ],
+    "plataformas": [
+      "PC",
+      "PlayStation 3",
+      "Xbox 360"
+    ],
+    "precio": 19.99,
+    "rating": 4.58,
+    "imagen": "https://media.rawg.io/media/screenshots/e59/e59cc96f38cc93af5a396173878018d7.jpg",
+    "fechaLanzamiento": "2010-10-27",
+    "resenas": []
+  },
+  {
+    "titulo": "The Legend of Zelda: Collector's Edition",
+    "descripcion": "Includes a demo of The Wind Waker and the full versions of The Legend of Zelda, Zelda II: The Adventure of Link, The Legend of Zelda: Ocarina of Time & The Legend of Zelda: Majora's Mask.",
+    "generos": [
+      "Action",
+      "Adventure",
+      "RPG"
+    ],
+    "plataformas": [
+      "GameCube"
+    ],
+    "precio": 59.99,
+    "rating": 4.27,
+    "imagen": "https://media.rawg.io/media/screenshots/253/253167e239ab310805c10d41e9fecbbe.jpg",
+    "fechaLanzamiento": "2003-11-07",
+    "resenas": []
+  },
+  {
+    "titulo": "Elden Ring",
+    "descripcion": "The Golden Order has been broken.\n\nRise, Tarnished, and be guided by grace to brandish the power of the Elden Ring and become an Elden Lord in the Lands Between.\n\nIn the Lands Between ruled by Queen Marika the Eternal, the Elden Ring, the source of the Erdtree, has been shattered.\n\nMarika's offspring, demigods all, claimed the shards of the Elden Ring known as the Great Runes, and the mad taint of",
+    "generos": [
+      "Action",
+      "RPG"
+    ],
+    "plataformas": [
+      "PC",
+      "Xbox One",
+      "PlayStation 4",
+      "Xbox Series S/X",
+      "PlayStation 5"
+    ],
+    "precio": 59.99,
+    "rating": 4.38,
+    "imagen": "https://media.rawg.io/media/games/b29/b294fdd866dcdb643e7bab370a552855.jpg",
+    "fechaLanzamiento": "2022-02-25",
+    "resenas": []
+  },
+  {
+    "titulo": "XCOM 2: War of the Chosen",
+    "descripcion": "XCOM® 2: War of the Chosen, is the expansion to the 2016 award-winning strategy game of the year. \r\n\r\nXCOM® 2: War of the Chosen adds extensive new content in the fight against ADVENT when additional resistance factions form in order to eliminate the alien threat on Earth. In response, a new enemy, known as the “Chosen,” emerges with one goal: recapture the Commander. This expansion includes new H",
+    "generos": [
+      "Strategy"
+    ],
+    "plataformas": [
+      "PlayStation 4",
+      "Linux",
+      "macOS",
+      "PC",
+      "Xbox One"
+    ],
+    "precio": 9.99,
+    "rating": 4.4,
+    "imagen": "https://media.rawg.io/media/games/824/8244534a6db2180e177271cebb9c002f.jpg",
+    "fechaLanzamiento": "2017-08-29",
+    "resenas": []
+  },
+  {
+    "titulo": "Baldur's Gate II: Shadows of Amn",
+    "descripcion": "Kidnapped. Imprisoned. Tortured. The wizard Irenicus holds you captive in his stronghold, attempting to strip you of the powers that are your birthright.\nCan you resist the evil within you, forge a legend of heroic proportions, and ultimately destroy the dark essence that haunts your dreams? Or will you embrace your monstrous nature, carve a swath of destruction across the realms, and ascend to go",
+    "generos": [
+      "RPG",
+      "Strategy"
+    ],
+    "plataformas": [
+      "Android",
+      "PC",
+      "macOS"
+    ],
+    "precio": 39.99,
+    "rating": 4.28,
+    "imagen": "https://media.rawg.io/media/games/c16/c160077f8977cb22f14e56408c1560ef.jpg",
+    "fechaLanzamiento": "2000-09-21",
+    "resenas": []
+  },
+  {
+    "titulo": "The Legend of Zelda: Majora's Mask",
+    "descripcion": "Link must save the world! This time, he finds himself trapped in\nTermina, an alternate version of Hyrule that is doomed to destruction in\njust three short days. Link must race to recover the Ocarina of Time\n(which allows him to manipulate time in multiple ways), defeat\nchallenging bosses in dungeons spread across Termina, and discover the\nkey to the mystery of Majora’s Mask. Along the way he’ll ob",
+    "generos": [
+      "Action",
+      "Adventure"
+    ],
+    "plataformas": [
+      "Nintendo Switch",
+      "Nintendo 64"
+    ],
+    "precio": 14.99,
+    "rating": 4.33,
+    "imagen": "https://media.rawg.io/media/games/b3c/b3c209cd49aae8a469a59b79b54dc599.jpg",
+    "fechaLanzamiento": "2000-04-27",
+    "resenas": []
+  },
+  {
+    "titulo": "The Legend of Zelda: A Link to the Past",
+    "descripcion": "Return to an age of magic and heroes! When an evil magician named \n      Agahnim begins kidnapping young maidens in Hyrule in a quest to break \n      the imprisoning seal on Ganon, a young boy named Link is called upon to \n      stop him. Link must venture into twisting mazes, dungeons, palaces and \n      shadowy forests as he searches for the maidens and Princess Zelda. \n      Traversing both Lig",
+    "generos": [
+      "Action",
+      "Adventure"
+    ],
+    "plataformas": [
+      "Wii",
+      "Game Boy Advance",
+      "SNES",
+      "Nintendo Switch",
+      "Nintendo 3DS",
+      "Wii U"
+    ],
+    "precio": 59.99,
+    "rating": 4.35,
+    "imagen": "https://media.rawg.io/media/games/087/08727beb32c364d30e8b2a1aa8595f8e.jpg",
+    "fechaLanzamiento": "1991-11-21",
+    "resenas": []
+  },
+  {
+    "titulo": "Divinity: Original Sin 2",
+    "descripcion": "The Divine is dead. The Void approaches. And the powers latent within you are soon to awaken. The battle for Divinity has begun. Choose wisely and trust sparingly; darkness lurks within every heart.\n\nWho will you be? A flesh-eating elf; an imperial lizard; an undead risen from the grave? Choose your race and origin story - or create your own! Discover how the world reacts differently to who - and ",
+    "generos": [
+      "RPG",
+      "Strategy"
+    ],
+    "plataformas": [
+      "PlayStation 4",
+      "Nintendo Switch",
+      "PC",
+      "Xbox One"
+    ],
+    "precio": 0,
+    "rating": 4.37,
+    "imagen": "https://media.rawg.io/media/games/424/424facd40f4eb1f2794fe4b4bb28a277.jpg",
+    "fechaLanzamiento": "2017-09-14",
+    "resenas": []
+  },
+  {
+    "titulo": "Red Dead Redemption",
+    "descripcion": "Red Dead Redemption is a third-person open-world adventure game which implements the Wild West at its best: it is very much GTA-clone but in bizarre stylistics and the very beginning of the twentieth century. This is the second title of a franchise, being preceded by Red Dead Revolver and followed by Red Dead Redemption 2 coming out in late 2018. \nWe play as John Marston who gradually takes down a",
+    "generos": [
+      "Action",
+      "Shooter"
+    ],
+    "plataformas": [
+      "PlayStation 4",
+      "PC",
+      "Xbox Series S/X",
+      "PlayStation 5",
+      "Nintendo Switch",
+      "Xbox One",
+      "Xbox 360",
+      "PlayStation 3"
+    ],
+    "precio": 0,
+    "rating": 4.41,
+    "imagen": "https://media.rawg.io/media/games/686/686909717c3aa01518bc42ae2bf4259e.jpg",
+    "fechaLanzamiento": "2010-05-18",
+    "resenas": []
+  },
+  {
+    "titulo": "Grand Theft Auto IV",
+    "descripcion": "Every crime story is a story of a search for success. The player will become Niko Bellic, immigrant arriving at the Liberty City to reunite with his cousin Roman and find the man that betrayed him and his army unit fifteen years prior to the events of the game. While protecting his cousin, Niko has to deal with loan sharks, Russian mobsters, and other gangs. After the third game, GTA brought more ",
+    "generos": [
+      "Action",
+      "Adventure"
+    ],
+    "plataformas": [
+      "Xbox 360",
+      "PC",
+      "PlayStation 3",
+      "Xbox One"
+    ],
+    "precio": 14.99,
+    "rating": 4.26,
+    "imagen": "https://media.rawg.io/media/games/4a0/4a0a1316102366260e6f38fd2a9cfdce.jpg",
+    "fechaLanzamiento": "2008-04-29",
+    "resenas": []
+  },
+  {
+    "titulo": "Portal 2",
+    "descripcion": "Portal 2 is a first-person puzzle game developed by Valve Corporation and released on April 19, 2011 on Steam, PS3 and Xbox 360. It was published by Valve Corporation in digital form and by Electronic Arts in physical form. \n\nIts plot directly follows the first game's, taking place in the Half-Life universe. You play as Chell, a test subject in a research facility formerly ran by the company Apert",
+    "generos": [
+      "Shooter",
+      "Puzzle"
+    ],
+    "plataformas": [
+      "PlayStation 3",
+      "PC",
+      "Xbox 360",
+      "Linux",
+      "macOS",
+      "Xbox One"
+    ],
+    "precio": 14.99,
+    "rating": 4.57,
+    "imagen": "https://media.rawg.io/media/games/2ba/2bac0e87cf45e5b508f227d281c9252a.jpg",
+    "fechaLanzamiento": "2011-04-18",
+    "resenas": []
+  },
+  {
+    "titulo": "The Last Of Us",
+    "descripcion": "The population of the Earth almost disappeared as a result of a pandemic caused by a mutated fungus. The disease causes irreversible changes in the human body, a person loses his mind and behaves aggressively, like a zombie. Civilization no longer exists, few survivors live in isolation under the protection of the military.\nCities outside the zones are dangerous ruins inhabited by infected people ",
+    "generos": [
+      "Action",
+      "Adventure"
+    ],
+    "plataformas": [
+      "PlayStation 3",
+      "PlayStation 4"
+    ],
+    "precio": 0,
+    "rating": 4.53,
+    "imagen": "https://media.rawg.io/media/games/a5a/a5a7fb8d9cb8063a8b42ee002b410db6.jpg",
+    "fechaLanzamiento": "2013-06-14",
+    "resenas": []
+  },
+  {
+    "titulo": "The Last Of Us Remastered",
+    "descripcion": "The Last of Us is a post-apocalypse 3rd person adventure with a distinct focus on naturalness and photorealistic graphics. It is the first title in the IP, followed by the second part, coming out in 2019 by Naughty Dog, mostly known for 'Crash Bandicoot' and 'Uncharted' series.\r\nYou play as Joel, delivering small requests in America, the year 2033, precisely 20 years after Cordyceps fungus catastr",
+    "generos": [
+      "Action",
+      "Adventure"
+    ],
+    "plataformas": [
+      "PlayStation 4"
+    ],
+    "precio": 0,
+    "rating": 4.69,
+    "imagen": "https://media.rawg.io/media/games/364/3642d850efb217c58feab80b8affaa89.jpg",
+    "fechaLanzamiento": "2014-07-29",
+    "resenas": []
+  },
+  {
+    "titulo": "LittleBigPlanet",
+    "descripcion": "LPB is a pseudo-3d puzzler-platformer exclusive for consoles from Sony Computer Entertainment. It was developed by British Media Molecule studio who before LPB developed only one semi-experimental game Ragdoll Kung-Fu. The game tells a story about the adventures of Sackboy, but there is no actual plot to follow in the game. The main focus is on the gameplay.\n\nThe game bets on user-generated-conten",
+    "generos": [
+      "Action",
+      "Arcade"
+    ],
+    "plataformas": [
+      "PlayStation 3"
+    ],
+    "precio": 9.99,
+    "rating": 4.09,
+    "imagen": "https://media.rawg.io/media/games/c32/c32fd6c512c48b3e2f10686a6e06690d.jpg",
+    "fechaLanzamiento": "2008-10-27",
+    "resenas": []
+  },
+  {
+    "titulo": "Metal Gear Solid 3: Subsistence",
+    "descripcion": "Enhanced version of Metal Gear Solid 3: Snake Eater (2004) with many added features; such as the free range camera, new camouflage outfits, bonus levels and a theater mode.",
+    "generos": [
+      "Shooter"
+    ],
+    "plataformas": [
+      "PlayStation 3",
+      "PS Vita",
+      "PlayStation 2"
+    ],
+    "precio": 0,
+    "rating": 4.34,
+    "imagen": "https://media.rawg.io/media/games/3a1/3a1c43732e91c188a0079c9511e1e625.jpg",
+    "fechaLanzamiento": "2005-12-22",
+    "resenas": []
+  },
+  {
+    "titulo": "Persona 5 Royal",
+    "descripcion": "Wear the mask.  Reveal your truth.\nPrepare for an all-new RPG experience in Persona®5 Royal based in the universe of the award-winning series, Persona®! Don the mask of Joker and join the Phantom Thieves of Hearts. Break free from the chains of modern society and stage grand heists to infiltrate the minds of the corrupt and make them change their ways! Persona®5 Royal is packed with new characters",
+    "generos": [
+      "Adventure",
+      "RPG"
+    ],
+    "plataformas": [
+      "Xbox Series S/X",
+      "PC",
+      "PlayStation 5",
+      "Nintendo Switch",
+      "Xbox One",
+      "PlayStation 4"
+    ],
+    "precio": 39.99,
+    "rating": 4.75,
+    "imagen": "https://media.rawg.io/media/games/a9c/a9c789951de65da545d51f664b4f2ce0.jpg",
+    "fechaLanzamiento": "2020-03-31",
+    "resenas": []
+  },
+  {
+    "titulo": "Divinity: Original Sin 2 - Definitive Edition",
+    "descripcion": "The Divine is dead. The Void approaches. And the powers lying dormant within you are soon to awaken. The battle for Divinity has begun. Choose wisely and trust sparingly; darkness lurks within every heart.\r\n\r\nWho will you be?\r\nA flesh-eating Elf, an Imperial Lizard or an Undead, risen from the grave? Discover how the world reacts differently to who - or what - you are.\r\nIt’s time for a new Divinit",
+    "generos": [
+      "RPG"
+    ],
+    "plataformas": [
+      "PlayStation 4",
+      "Nintendo Switch",
+      "macOS",
+      "PC",
+      "iOS",
+      "Xbox One"
+    ],
+    "precio": 29.99,
+    "rating": 4.52,
+    "imagen": "https://media.rawg.io/media/games/cd2/cd2a1a360839002bceadc5a8b3c7dbf7.jpg",
+    "fechaLanzamiento": "2018-08-31",
+    "resenas": []
+  },
+  {
+    "titulo": "God of War (2018)",
+    "descripcion": "It is a new beginning for Kratos. Living as a man outside the shadow of the gods, he ventures into the brutal Norse wilds with his son Atreus, fighting to fulfill a deeply personal quest. \r\n\r\nHis vengeance against the Gods of Olympus years behind him, Kratos now lives as a man in the realm of Norse Gods and monsters. It is in this harsh, unforgiving world that he must fight to survive… And teach h",
+    "generos": [
+      "Action"
+    ],
+    "plataformas": [
+      "PC",
+      "PlayStation 4"
+    ],
+    "precio": 29.99,
+    "rating": 4.54,
+    "imagen": "https://media.rawg.io/media/games/4be/4be6a6ad0364751a96229c56bf69be59.jpg",
+    "fechaLanzamiento": "2018-04-20",
+    "resenas": []
+  },
+  {
+    "titulo": "Metal Gear Solid",
+    "descripcion": "You are Snake, a government agent on a mission to regain control of a secret nuclear weapons base from terrorist hands. Lightly armed and facing an army of foes, Snake must avoid firefights in order to survive. If Snake can locate them he can utilize advanced hardware, ranging from silenced pistols to ground-to-air missiles. Enemies react to sight and sound - so stay quiet and stay in the shadows.",
+    "generos": [
+      "Action"
+    ],
+    "plataformas": [
+      "PC",
+      "Game Boy Color",
+      "PlayStation",
+      "PlayStation 3"
+    ],
+    "precio": 9.99,
+    "rating": 4.39,
+    "imagen": "https://media.rawg.io/media/games/bbc/bbce6f1659d35ffc16aed8b66e9990a1.jpg",
+    "fechaLanzamiento": "1998-09-03",
+    "resenas": []
+  }
+]
