@@ -1,12 +1,23 @@
+/* =====================================================
+   GameVault
+   Base azul noche, un acento coral y colores por género.
+   Títulos: Chakra Petch. Textos: DM Sans.
+   ===================================================== */
+
 :root {
-  --fondo: #0e1116;
-  --superficie: #171b22;
-  --superficie-2: #1f242d;
-  --borde: #2a303b;
-  --texto: #e8eaed;
-  --texto-suave: #98a1b0;
-  --acento: #b4f04a;
-  --acento-texto: #12160a;
+  --fondo: #0f1220;
+  --panel: #171b2e;
+  --panel-2: #1f2440;
+  --linea: #2c3256;
+  --texto: #f1f2f8;
+  --suave: #9aa0c0;
+  --acento: #ff5f6d;
+  --sobre-acento: #2a0a10;
+  --cielo: #4cc9f0;
+  --estrella: #ffb84d;
+
+  --fuente-titulo: 'Chakra Petch', 'Segoe UI', system-ui, sans-serif;
+  --fuente-texto: 'DM Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 }
 
 * {
@@ -17,55 +28,240 @@
 body {
   background: var(--fondo);
   color: var(--texto);
-  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-family: var(--fuente-texto);
   line-height: 1.5;
 }
 
-/* ---------- Cabecera ---------- */
+h1, h2, h3 {
+  font-family: var(--fuente-titulo);
+  line-height: 1.15;
+}
 
-.cabecera {
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--cielo);
+  outline-offset: 2px;
+}
+
+/* ---------- Barra superior y pestañas ---------- */
+
+.barra {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(15, 18, 32, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--linea);
+}
+
+.barra-interior {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 1.5rem;
-  padding: 2rem 1.5rem 1.5rem;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
-.cabecera h1 {
-  font-size: 2rem;
-  letter-spacing: -0.5px;
-  color: var(--acento);
+.marca {
+  padding: 0.9rem 0;
+  font-family: var(--fuente-titulo);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--texto);
+  text-decoration: none;
 }
 
-.cabecera p {
-  color: var(--texto-suave);
-}
-
-.estadisticas {
+.tabs {
   display: flex;
-  gap: 0.75rem;
+  gap: 0.25rem;
+  overflow-x: auto;
 }
 
-.estadistica {
-  background: var(--superficie);
-  border: 1px solid var(--borde);
-  border-radius: 10px;
-  padding: 0.6rem 1rem;
+.tab {
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  padding: 1.05rem 0.9rem 0.95rem;
+  color: var(--suave);
+  font-weight: 500;
+  white-space: nowrap;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.tab:hover {
+  color: var(--texto);
+}
+
+.tab.activa {
+  color: var(--texto);
+  border-bottom-color: var(--acento);
+}
+
+/* ---------- Contenedor general ---------- */
+
+.contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem 3rem;
+}
+
+.vista[hidden] {
+  display: none;
+}
+
+.mensaje {
+  text-align: center;
+  color: var(--suave);
+  padding: 2.5rem 0;
+}
+
+.mensaje[hidden] {
+  display: none;
+}
+
+/* ---------- Botones ---------- */
+
+.boton {
+  background: var(--acento);
+  color: var(--sobre-acento);
+  border: none;
+  border-radius: 8px;
+  padding: 0.65rem 1.25rem;
+  font-weight: 700;
+  transition: filter 0.15s;
+}
+
+.boton:hover {
+  filter: brightness(1.1);
+}
+
+.boton:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+.boton-claro {
+  background: transparent;
+  color: var(--texto);
+  border: 1px solid var(--linea);
+}
+
+.boton-claro:hover {
+  border-color: var(--suave);
+  filter: none;
+}
+
+/* ---------- Insignia de rating (la usan varias partes) ---------- */
+
+.insignia {
+  display: inline-block;
+  background: rgba(15, 18, 32, 0.85);
+  color: var(--estrella);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.1rem 0.55rem;
+  border-radius: 6px;
+}
+
+.rating {
+  color: var(--estrella);
+  font-weight: 700;
+}
+
+.estrellas {
+  color: var(--estrella);
+  letter-spacing: 1px;
+}
+
+/* ---------- Géneros (punto de color + nombre) ---------- */
+
+.generos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.9rem;
+}
+
+.genero {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--suave);
+}
+
+.genero-punto {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+}
+
+/* ---------- Juego destacado ---------- */
+
+.destacado {
+  position: relative;
+  min-height: 340px;
+  margin-bottom: 1.75rem;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--panel);
+  display: flex;
+  align-items: flex-end;
+}
+
+.destacado[hidden] {
+  display: none;
+}
+
+.destacado-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.destacado-img.sin-imagen {
+  font-size: 8rem;
+}
+
+.destacado-velo {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(15, 18, 32, 0.95) 0%, rgba(15, 18, 32, 0.6) 45%, rgba(15, 18, 32, 0) 80%);
+}
+
+.destacado-texto {
+  position: relative;
   display: flex;
   flex-direction: column;
-  min-width: 110px;
+  align-items: flex-start;
+  gap: 0.8rem;
+  max-width: 560px;
+  padding: 2rem;
 }
 
-.estadistica strong {
-  font-size: 1.25rem;
+.destacado-etiqueta {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--suave);
 }
 
-.estadistica span {
-  font-size: 0.8rem;
-  color: var(--texto-suave);
+.destacado-titulo {
+  font-size: clamp(1.8rem, 4.5vw, 3rem);
+  font-weight: 700;
+}
+
+.destacado .genero {
+  color: var(--texto);
 }
 
 /* ---------- Filtros ---------- */
@@ -74,19 +270,17 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1.5rem 1.5rem;
+  margin-bottom: 0.9rem;
 }
 
 .filtros input,
 .filtros select {
-  background: var(--superficie);
+  background: var(--panel);
   color: var(--texto);
-  border: 1px solid var(--borde);
+  border: 1px solid var(--linea);
   border-radius: 8px;
-  padding: 0.6rem 0.8rem;
-  font-size: 0.95rem;
+  padding: 0.65rem 0.85rem;
+  font: inherit;
 }
 
 .filtros input {
@@ -96,23 +290,18 @@ body {
 
 .filtros input:focus,
 .filtros select:focus {
-  outline: 2px solid var(--acento);
+  outline: 2px solid var(--cielo);
   outline-offset: -1px;
 }
 
+.resultados {
+  min-height: 1.5rem;
+  margin-bottom: 0.9rem;
+  font-size: 0.9rem;
+  color: var(--suave);
+}
+
 /* ---------- Catálogo ---------- */
-
-main {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1.5rem 3rem;
-}
-
-.mensaje {
-  text-align: center;
-  color: var(--texto-suave);
-  padding: 3rem 0;
-}
 
 .catalogo {
   display: grid;
@@ -121,19 +310,23 @@ main {
 }
 
 .tarjeta {
-  background: var(--superficie);
-  border: 1px solid var(--borde);
+  background: var(--panel);
+  border: 1px solid var(--linea);
   border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
-  transition: transform 0.15s, border-color 0.15s;
+  transition: border-color 0.15s, transform 0.2s;
 }
 
 .tarjeta:hover,
 .tarjeta:focus-visible {
-  transform: translateY(-4px);
   border-color: var(--acento);
-  outline: none;
+  transform: translateY(-4px);
+}
+
+.tarjeta-media {
+  position: relative;
+  overflow: hidden;
 }
 
 .tarjeta-img {
@@ -141,59 +334,370 @@ main {
   width: 100%;
   aspect-ratio: 16 / 10;
   object-fit: cover;
+  transition: transform 0.25s;
+}
+
+.tarjeta:hover .tarjeta-img {
+  transform: scale(1.04);
+}
+
+.tarjeta-media .insignia {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
 }
 
 .sin-imagen {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #243044, #162033);
-  color: var(--acento);
+  background: linear-gradient(135deg, var(--panel-2), var(--panel));
+  color: var(--suave);
+  font-family: var(--fuente-titulo);
   font-size: 3rem;
   font-weight: 700;
 }
 
 .tarjeta-cuerpo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
   padding: 0.9rem 1rem 1rem;
 }
 
 .tarjeta-titulo {
   font-size: 1.05rem;
-  margin-bottom: 0.2rem;
-}
-
-.tarjeta-generos {
-  font-size: 0.85rem;
-  color: var(--texto-suave);
-  margin-bottom: 0.8rem;
+  font-weight: 700;
+  /* máximo 2 líneas, si no las tarjetas quedan de distinta altura */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 2.3em;
 }
 
 .tarjeta-pie {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
+  margin-top: 0.2rem;
 }
 
-.rating {
-  color: #ffc857;
-  font-weight: 600;
+.tarjeta-anio {
+  font-size: 0.85rem;
+  color: var(--suave);
 }
 
 .precio {
-  background: var(--acento);
-  color: var(--acento-texto);
+  font-family: var(--fuente-titulo);
+  font-size: 1.15rem;
   font-weight: 700;
-  font-size: 0.85rem;
-  padding: 0.15rem 0.6rem;
-  border-radius: 999px;
 }
 
-/* ---------- Modal ---------- */
+.precio.gratis {
+  color: var(--cielo);
+}
+
+/* Cuadros grises mientras cargan los datos */
+.esqueleto {
+  cursor: default;
+  pointer-events: none;
+  padding-bottom: 1rem;
+}
+
+.esqueleto-img,
+.esqueleto-linea {
+  background: linear-gradient(90deg, var(--panel-2) 25%, var(--linea) 50%, var(--panel-2) 75%);
+  background-size: 200% 100%;
+  animation: brillo 1.4s infinite linear;
+}
+
+.esqueleto-img {
+  aspect-ratio: 16 / 10;
+}
+
+.esqueleto-linea {
+  height: 0.9rem;
+  margin: 0.9rem 1rem 0;
+  border-radius: 4px;
+}
+
+.esqueleto-linea.corta {
+  width: 45%;
+}
+
+@keyframes brillo {
+  to { background-position: -200% 0; }
+}
+
+.mas {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.mas[hidden],
+.boton[hidden] {
+  display: none;
+}
+
+/* ---------- Dashboard ---------- */
+
+.kpis {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.kpi {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 1rem 1.1rem;
+  background: var(--panel);
+  border: 1px solid var(--linea);
+  border-radius: 12px;
+}
+
+.kpi strong {
+  font-family: var(--fuente-titulo);
+  font-size: 1.9rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.kpi span {
+  font-size: 0.85rem;
+  color: var(--suave);
+}
+
+.paneles {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1rem;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--linea);
+  border-radius: 12px;
+  padding: 1.1rem 1.25rem 1.25rem;
+  min-width: 0; /* sin esto los gráficos no se encogen en pantallas chicas */
+}
+
+.panel-5 { grid-column: span 5; }
+.panel-7 { grid-column: span 7; }
+
+.panel h2 {
+  font-size: 1.15rem;
+  margin-bottom: 0.25rem;
+}
+
+.panel-nota {
+  font-size: 0.85rem;
+  color: var(--suave);
+  margin-bottom: 0.5rem;
+}
+
+.grafico-caja {
+  position: relative;
+  height: 300px;
+  margin-top: 0.75rem;
+}
+
+/* Top 10 */
+
+.top10 {
+  list-style: none;
+  padding: 0;
+  margin-top: 0.5rem;
+}
+
+.top-item + .top-item {
+  border-top: 1px solid var(--linea);
+}
+
+.top-boton {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  width: 100%;
+  padding: 0.5rem 0.25rem;
+  background: none;
+  border: none;
+  color: inherit;
+  text-align: left;
+  border-radius: 8px;
+}
+
+.top-boton:hover {
+  background: var(--panel-2);
+}
+
+.top-puesto {
+  width: 1.6rem;
+  flex: none;
+  font-family: var(--fuente-titulo);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--suave);
+  text-align: center;
+}
+
+.top-img {
+  width: 76px;
+  height: 46px;
+  flex: none;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.top-img.sin-imagen {
+  font-size: 1.3rem;
+}
+
+.top-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.top-info strong {
+  font-size: 0.95rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.top-info span {
+  font-size: 0.8rem;
+  color: var(--suave);
+}
+
+.top-puntos {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+  flex: none;
+}
+
+.top-barra {
+  display: block;
+  width: 70px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--linea);
+  overflow: hidden;
+}
+
+.top-barra i {
+  display: block;
+  height: 100%;
+  background: var(--estrella);
+  transition: width 0.8s ease-out;
+}
+
+/* ---------- Pestaña Reseñas recientes ---------- */
+
+.encabezado-vista {
+  margin-bottom: 1.25rem;
+}
+
+.encabezado-vista h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.2rem;
+}
+
+.encabezado-vista p {
+  color: var(--suave);
+}
+
+.lista-resenas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+  gap: 1rem;
+}
+
+.resena-card {
+  display: flex;
+  gap: 1rem;
+  padding: 0.9rem;
+  background: var(--panel);
+  border: 1px solid var(--linea);
+  border-radius: 12px;
+}
+
+.resena-portada {
+  flex: none;
+  align-self: flex-start;
+  padding: 0;
+  border: none;
+  background: none;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.resena-img {
+  display: block;
+  width: 110px;
+  height: 70px;
+  object-fit: cover;
+}
+
+.resena-img.sin-imagen {
+  font-size: 1.8rem;
+}
+
+.resena-cuerpo {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.resena-titulo {
+  align-self: flex-start;
+  padding: 0;
+  background: none;
+  border: none;
+  color: var(--texto);
+  font-family: var(--fuente-titulo);
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-align: left;
+}
+
+.resena-titulo:hover {
+  text-decoration: underline;
+}
+
+.resena-linea {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+}
+
+.resena-fecha,
+.resena-autor {
+  font-size: 0.85rem;
+  color: var(--suave);
+}
+
+.resena-comentario {
+  margin-top: 0.15rem;
+}
+
+/* ---------- Ventana de detalle ---------- */
 
 .modal {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.75);
+  z-index: 20;
+  background: rgba(8, 10, 20, 0.8);
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -207,9 +711,9 @@ main {
 
 .modal-caja {
   position: relative;
-  background: var(--superficie);
-  border: 1px solid var(--borde);
-  border-radius: 14px;
+  background: var(--panel);
+  border: 1px solid var(--linea);
+  border-radius: 16px;
   width: 100%;
   max-width: 720px;
   overflow: hidden;
@@ -217,18 +721,17 @@ main {
 
 .modal-cerrar {
   position: absolute;
-  top: 0.6rem;
+  top: 0.7rem;
   right: 0.8rem;
   z-index: 1;
   width: 2.2rem;
   height: 2.2rem;
   border: none;
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(15, 18, 32, 0.8);
   color: var(--texto);
   font-size: 1.5rem;
   line-height: 1;
-  cursor: pointer;
 }
 
 .modal-img {
@@ -243,16 +746,20 @@ main {
 }
 
 .modal-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
   padding: 1.25rem 1.5rem 1.5rem;
 }
 
 .modal-info h2 {
-  margin-bottom: 0.4rem;
+  font-size: 1.8rem;
+  font-weight: 700;
 }
 
 .modal-info h3 {
-  margin: 1.5rem 0 0.75rem;
-  font-size: 1.1rem;
+  margin-top: 0.8rem;
+  font-size: 1.15rem;
 }
 
 .modal-meta {
@@ -260,36 +767,26 @@ main {
   flex-wrap: wrap;
   align-items: center;
   gap: 1rem;
-  color: var(--texto-suave);
-  margin-bottom: 0.8rem;
+  color: var(--suave);
 }
 
-.chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-bottom: 0.8rem;
-}
-
-.chip {
-  background: var(--superficie-2);
-  border: 1px solid var(--borde);
-  border-radius: 999px;
-  font-size: 0.8rem;
-  padding: 0.1rem 0.7rem;
+.precio-grande {
+  font-family: var(--fuente-titulo);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--texto);
 }
 
 .plataformas {
   font-size: 0.9rem;
-  color: var(--texto-suave);
-  margin-bottom: 0.8rem;
+  color: var(--suave);
 }
 
 .descripcion {
-  margin-bottom: 0.5rem;
+  max-width: 70ch;
 }
 
-/* ---------- Reseñas ---------- */
+/* Reseñas dentro de la ventana */
 
 .resenas {
   display: flex;
@@ -298,12 +795,12 @@ main {
 }
 
 .resenas-vacio {
-  color: var(--texto-suave);
+  color: var(--suave);
   font-size: 0.9rem;
 }
 
-.resena {
-  background: var(--superficie-2);
+.resena-item {
+  background: var(--panel-2);
   border-radius: 8px;
   padding: 0.7rem 0.9rem;
 }
@@ -314,15 +811,15 @@ main {
   margin-bottom: 0.2rem;
 }
 
-.resena p {
+.resena-item p {
   font-size: 0.92rem;
-  color: var(--texto-suave);
+  color: var(--suave);
 }
 
 .form-resena {
   display: grid;
   gap: 0.6rem;
-  margin-top: 1.25rem;
+  margin-top: 0.4rem;
 }
 
 .form-resena input,
@@ -330,38 +827,122 @@ main {
 .form-resena textarea {
   background: var(--fondo);
   color: var(--texto);
-  border: 1px solid var(--borde);
+  border: 1px solid var(--linea);
   border-radius: 8px;
   padding: 0.55rem 0.75rem;
   font: inherit;
 }
 
-.form-resena button {
-  background: var(--acento);
-  color: var(--acento-texto);
-  border: none;
-  border-radius: 8px;
-  padding: 0.65rem;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.form-resena button:disabled {
-  opacity: 0.5;
-  cursor: wait;
-}
-
 .form-error {
-  color: #ff7a7a;
+  color: #ff8a93;
   font-size: 0.9rem;
 }
 
+.form-error:empty {
+  display: none;
+}
+
+/* ---------- Pie de página ---------- */
+
+.pie {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  border-top: 1px solid var(--linea);
+  font-size: 0.85rem;
+  color: var(--suave);
+}
+
+.pie a {
+  color: var(--texto);
+}
+
+/* ---------- Animaciones (pocas, y cada una con un motivo) ---------- */
+
+/* Al cambiar de pestaña, la nueva aparece suavemente */
+.vista:not([hidden]) {
+  animation: aparecer 0.3s ease-out;
+}
+
+/* El juego destacado aparece cuando llegan los datos */
+.destacado:not([hidden]) {
+  animation: aparecer 0.5s ease-out;
+}
+
+/* Las tarjetas nuevas entran una tras otra (el retraso lo pone el JS) */
+.tarjeta.nueva {
+  animation: entrar 0.4s ease-out backwards;
+  animation-delay: var(--retraso, 0ms);
+}
+
+/* La ventana de detalle se abre con un pequeño salto */
+.modal:not([hidden]) {
+  animation: fundido 0.2s ease-out;
+}
+
+.modal:not([hidden]) .modal-caja {
+  animation: subir 0.25s ease-out;
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(8px); }
+}
+
+@keyframes entrar {
+  from { opacity: 0; transform: translateY(14px); }
+}
+
+@keyframes fundido {
+  from { opacity: 0; }
+}
+
+@keyframes subir {
+  from { opacity: 0; transform: translateY(20px) scale(0.98); }
+}
+
+/* ---------- Pantallas chicas ---------- */
+
+@media (max-width: 900px) {
+  .panel-5,
+  .panel-7 {
+    grid-column: span 12;
+  }
+  .lista-resenas {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 600px) {
-  .estadisticas {
+  .contenedor {
+    padding: 1rem 1rem 2.5rem;
+  }
+  .barra-interior {
+    padding: 0 1rem;
+  }
+  .marca {
+    padding-bottom: 0;
+  }
+  .tabs {
     width: 100%;
   }
-  .estadistica {
-    flex: 1;
-    min-width: 0;
+  .destacado {
+    min-height: 300px;
+  }
+  .destacado-texto {
+    padding: 1.25rem;
+  }
+  .destacado-velo {
+    background: linear-gradient(0deg, rgba(15, 18, 32, 0.95) 0%, rgba(15, 18, 32, 0.4) 70%, rgba(15, 18, 32, 0) 100%);
+  }
+  .resena-card {
+    flex-direction: column;
+  }
+}
+
+/* Si el sistema pide menos movimiento, quitamos las animaciones */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
   }
 }

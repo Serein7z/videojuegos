@@ -4,38 +4,105 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GameVault | Catálogo de videojuegos</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-  <header class="cabecera">
-    <div class="cabecera-texto">
-      <h1>GameVault</h1>
-      <p>Catálogo de videojuegos</p>
+  <header class="barra">
+    <div class="barra-interior">
+      <a class="marca" href="#">
+        GameVault
+      </a>
+
+      <nav class="tabs" role="tablist" aria-label="Secciones">
+        <button class="tab activa" role="tab" aria-selected="true" data-vista="catalogo">Catálogo</button>
+        <button class="tab" role="tab" aria-selected="false" data-vista="dashboard">Dashboard</button>
+        <button class="tab" role="tab" aria-selected="false" data-vista="resenas">Reseñas recientes</button>
+      </nav>
     </div>
-    <div id="estadisticas" class="estadisticas"></div>
   </header>
 
-  <section class="filtros">
-    <input id="buscador" type="search" placeholder="Buscar por título...">
+  <main class="contenedor">
 
-    <select id="filtro-genero">
-      <option value="">Todos los géneros</option>
-    </select>
+    <!-- ========== Pestaña 1: Catálogo ========== -->
+    <section id="vista-catalogo" class="vista">
+      <div id="destacado" class="destacado" hidden></div>
 
-    <select id="filtro-orden">
-      <option value="titulo">Ordenar: A-Z</option>
-      <option value="rating">Mejor valorados</option>
-      <option value="nuevo">Más recientes</option>
-      <option value="precio-asc">Precio: menor a mayor</option>
-      <option value="precio-desc">Precio: mayor a menor</option>
-    </select>
-  </section>
+      <div class="filtros">
+        <input id="buscador" type="search" placeholder="Buscar por título..." aria-label="Buscar por título">
 
-  <main>
-    <p id="mensaje" class="mensaje" hidden></p>
-    <div id="catalogo" class="catalogo"></div>
+        <select id="filtro-genero" aria-label="Filtrar por género">
+          <option value="">Todos los géneros</option>
+        </select>
+
+        <select id="filtro-orden" aria-label="Ordenar">
+          <option value="titulo">Ordenar: A-Z</option>
+          <option value="rating">Mejor valorados</option>
+          <option value="nuevo">Más recientes</option>
+          <option value="precio-asc">Precio: menor a mayor</option>
+          <option value="precio-desc">Precio: mayor a menor</option>
+        </select>
+      </div>
+
+      <p id="resultados" class="resultados"></p>
+      <p id="mensaje" class="mensaje" hidden></p>
+
+      <div id="catalogo" class="catalogo"></div>
+
+      <div class="mas">
+        <button id="boton-mas" class="boton boton-claro" hidden>Cargar más juegos</button>
+      </div>
+    </section>
+
+    <!-- ========== Pestaña 2: Dashboard ========== -->
+    <section id="vista-dashboard" class="vista" hidden>
+      <p id="mensaje-dashboard" class="mensaje" hidden></p>
+      <div id="kpis" class="kpis"></div>
+
+      <div class="paneles">
+        <article class="panel panel-5">
+          <h2>Juegos por género</h2>
+          <p class="panel-nota">Un juego puede tener varios géneros, por eso cuenta en cada uno.</p>
+          <div class="grafico-caja"><canvas id="grafico-generos"></canvas></div>
+        </article>
+
+        <article class="panel panel-7">
+          <h2>Lanzamientos por año</h2>
+          <div class="grafico-caja"><canvas id="grafico-anios"></canvas></div>
+        </article>
+
+        <article class="panel panel-5">
+          <h2>Rangos de precio</h2>
+          <div class="grafico-caja"><canvas id="grafico-precios"></canvas></div>
+        </article>
+
+        <article class="panel panel-7">
+          <h2>Los 10 mejor valorados</h2>
+          <ol id="top10" class="top10"></ol>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========== Pestaña 3: Reseñas recientes ========== -->
+    <section id="vista-resenas" class="vista" hidden>
+      <div class="encabezado-vista">
+        <h2>Reseñas recientes</h2>
+        <p>Lo último que opinaron los jugadores. Abre un juego para escribir la tuya.</p>
+      </div>
+      <p id="mensaje-resenas" class="mensaje" hidden></p>
+      <div id="lista-resenas" class="lista-resenas"></div>
+    </section>
+
   </main>
+
+  <footer class="pie">
+    Datos e imágenes de <a href="https://rawg.io" target="_blank" rel="noopener">RAWG</a>.
+    Proyecto académico de Inteligencia de Negocios.
+  </footer>
 
   <!-- Ventana con el detalle del juego (se llena desde JS) -->
   <div id="modal" class="modal" hidden>
@@ -45,10 +112,14 @@
     </div>
   </div>
 
+  <!-- Chart.js: la librería de los gráficos -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
   <!-- El orden importa: cada archivo usa funciones del anterior -->
   <script src="js/config.js"></script>
   <script src="js/api.js"></script>
   <script src="js/ui.js"></script>
+  <script src="js/graficos.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

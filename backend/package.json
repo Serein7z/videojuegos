@@ -8,7 +8,9 @@
     "dev": "node --watch src/server.js",
     "rawg": "node src/scripts/descargar-rawg.js",
       "traducir": "node src/scripts/traducir.js",
-    "importar": "node src/scripts/importar.js"
+    "importar": "node src/scripts/importar.js",
+        "resenas": "node src/scripts/sembrar-resenas.js"
+
   },
   "dependencies": {
     "cors": "^2.8.6",

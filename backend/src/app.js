@@ -3,7 +3,6 @@ const cors = require('cors');
 const juegosRoutes = require('./routes/juegos.routes');
 const manejarErrores = require('./middlewares/manejarErrores');
 
-// Aquí solo se arma la aplicación Express (sin conectar a la base ni abrir el puerto)
 const app = express();
 
 app.use(cors()); // permite que el frontend (otro origen) llame a la API

@@ -1,12 +1,11 @@
 const juegosService = require('../services/juegos.service');
 
-// Los controllers reciben la petición (req), llaman al service
-// y arman la respuesta (res). No tocan la base de datos directamente.
 
 async function listar(req, res, next) {
   try {
-    const juegos = await juegosService.listar(req.query);
-    res.json(juegos);
+    // Ahora responde { juegos, total, pagina, totalPaginas }
+    const resultado = await juegosService.listar(req.query);
+    res.json(resultado);
   } catch (error) {
     next(error);
   }
@@ -78,6 +77,26 @@ async function estadisticas(req, res, next) {
   }
 }
 
+async function dashboard(req, res, next) {
+  try {
+    const datos = await juegosService.dashboard();
+    res.json(datos);
+  } catch (error) {
+    next(error);
+  }
+}
+
+async function resenasRecientes(req, res, next) {
+  try {
+    // ?limite=20 (máximo 50)
+    const limite = Math.min(Number(req.query.limite) || 20, 50);
+    const resenas = await juegosService.resenasRecientes(limite);
+    res.json(resenas);
+  } catch (error) {
+    next(error);
+  }
+}
+
 module.exports = {
   listar,
   obtener,
@@ -85,5 +104,7 @@ module.exports = {
   actualizar,
   eliminar,
   agregarResena,
-  estadisticas
+  estadisticas,
+  dashboard,
+  resenasRecientes
 };

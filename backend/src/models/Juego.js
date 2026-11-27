@@ -1,8 +1,5 @@
 const mongoose = require('mongoose');
 
-// Las reseñas van DENTRO del documento del juego (documento embebido).
-// En una base relacional esto sería otra tabla con una llave foránea;
-// en MongoDB lo guardamos junto y nos ahorramos el JOIN.
 const resenaSchema = new mongoose.Schema({
   usuario: { type: String, required: true, trim: true },
   puntuacion: { type: Number, required: true, min: 1, max: 5 },
