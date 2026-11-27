@@ -1,6 +1,22 @@
 # GameVault — Catálogo de videojuegos
 
-Mini proyecto de Inteligencia de Negocios: una página web (cliente) que consume una API REST en JSON (servidor), la cual guarda y consulta los datos en una base **no relacional** (MongoDB Atlas).
+Proyecto académico del curso de **Inteligencia de Negocios**: una página web (cliente) que consume una API REST en JSON (servidor), la cual guarda y consulta los datos en una base de datos **no relacional** (MongoDB Atlas).
+
+## Qué hace
+
+- **Catálogo:** 500 juegos con portada, géneros, rating y precio. Tiene buscador, filtro por género, orden y botón **"Cargar más"** (paginación desde el servidor).
+- **Detalle de un juego:** descripción, plataformas y reseñas, con un formulario para publicar una nueva.
+- **Dashboard:** indicadores generales y gráficos de juegos por género, lanzamientos por año, rangos de precio y el top 10 mejor valorados.
+- **Reseñas recientes:** las últimas reseñas de todo el catálogo, ordenadas por fecha.
+
+## Tecnologías
+
+| Parte | Tecnología |
+|-------|------------|
+| Frontend | HTML, CSS y JavaScript puro, Chart.js para los gráficos |
+| Backend | Node.js, Express, Mongoose |
+| Base de datos | MongoDB Atlas (no relacional) |
+| Datos de origen | API de [RAWG](https://rawg.io/apidocs) |
 
 ---
 
@@ -21,6 +37,8 @@ Mini proyecto de Inteligencia de Negocios: una página web (cliente) que consume
 
 ### Capas dentro del backend
 
+El backend sigue una organización por capas, inspirada en MVC (el modelo y el controlador están en el backend; la vista es el frontend, que va aparte como cliente).
+
 ```
 Petición ─► routes ─► controllers ─► services ─► models ─► MongoDB
             (URL)     (req / res)    (lógica y   (forma de
@@ -29,8 +47,8 @@ Petición ─► routes ─► controllers ─► services ─► models ─► 
 
 | Capa | Responsabilidad | Qué NO hace |
 |------|-----------------|-------------|
-| `routes` | Dice qué URL + método atiende cada controller | No tiene lógica |
-| `controllers` | Lee `req`, llama al service, responde con `res` y el código HTTP | No consulta la base |
+| `routes` | Dice qué URL y método atiende cada controller | No tiene lógica |
+| `controllers` | Lee `req`, llama al service y responde con `res` y el código HTTP | No consulta la base |
 | `services` | Hace las consultas a la base y la lógica | No sabe qué es `req` ni `res` |
 | `models` | Define cómo es un juego y valida los datos | — |
 
@@ -48,7 +66,7 @@ videojuegos-bi/
 │   ├── .env.example               ← plantilla; copiar como .env
 │   ├── data/
 │   │   ├── juegos-en.json         ← descargado de RAWG (descripciones en inglés)
-│   │   ├── traducciones.json      ← caché de traducciones (se genera solo)
+│   │   ├── traducciones.json      ← caché de traducciones
 │   │   └── juegos.json            ← archivo final que se carga a la base
 │   └── src/
 │       ├── server.js              ← conecta a la base y abre el puerto
@@ -58,7 +76,7 @@ videojuegos-bi/
 │       ├── models/
 │       │   └── Juego.js           ← esquema del juego (con reseñas embebidas)
 │       ├── services/
-│       │   └── juegos.service.js  ← consultas: listar, crear, estadísticas...
+│       │   └── juegos.service.js  ← consultas: listar, dashboard, reseñas recientes...
 │       ├── controllers/
 │       │   └── juegos.controller.js
 │       ├── routes/
@@ -68,20 +86,22 @@ videojuegos-bi/
 │       └── scripts/
 │           ├── descargar-rawg.js  ← RAWG → juegos-en.json
 │           ├── traducir.js        ← juegos-en.json → juegos.json (en español)
-│           └── importar.js        ← juegos.json → MongoDB
+│           ├── importar.js        ← juegos.json → MongoDB
+│           └── sembrar-resenas.js ← reseñas de ejemplo para la demo
 │
 └── frontend/
-    ├── index.html                 ← estructura de la página
+    ├── index.html                 ← estructura de la página y las 3 pestañas
     ├── css/
     │   └── styles.css
     └── js/
         ├── config.js              ← URL del backend
         ├── api.js                 ← todas las llamadas fetch
         ├── ui.js                  ← funciones que dibujan en pantalla
-        └── main.js                ← eventos y arranque
+        ├── graficos.js            ← gráficos del dashboard y top 10
+        └── main.js                ← pestañas, eventos y arranque
 ```
 
-El orden de los `<script>` en `index.html` importa: `config → api → ui → main`.
+El orden de los `<script>` en `index.html` importa: `config → api → ui → graficos → main`.
 
 ---
 
@@ -91,18 +111,62 @@ Base: `http://localhost:3000/api`
 
 | Método | Ruta | Qué hace |
 |--------|------|----------|
-| GET | `/juegos?buscar=&genero=&orden=` | Lista juegos (filtros opcionales) |
-| GET | `/juegos/:id` | Un juego con sus reseñas |
+| GET | `/juegos?buscar=&genero=&orden=&pagina=&limite=` | Lista paginada de juegos (todos los parámetros son opcionales) |
+| GET | `/juegos/:id` | Un juego completo, con sus reseñas |
 | POST | `/juegos` | Crea un juego |
 | PUT | `/juegos/:id` | Actualiza un juego |
 | DELETE | `/juegos/:id` | Elimina un juego |
 | POST | `/juegos/:id/resenas` | Agrega una reseña al juego |
+| GET | `/juegos/dashboard` | Todo lo que usa la pestaña Dashboard |
+| GET | `/juegos/resenas-recientes?limite=` | Últimas reseñas de todo el catálogo |
 | GET | `/juegos/estadisticas` | Total, promedios y conteo por género |
 | GET | `/salud` | Prueba rápida: responde `{ "ok": true }` |
 
-Valores de `orden`: `titulo`, `rating`, `nuevo`, `precio-asc`, `precio-desc`.
+Detalles de los parámetros:
 
-Forma de un juego (este es el "contrato" entre backend y frontend):
+- `orden`: `titulo` (por defecto), `rating`, `nuevo`, `precio-asc`, `precio-desc`.
+- `pagina`: empieza en 1. `limite`: 24 por defecto, máximo 60.
+- `/resenas-recientes`: `limite` 20 por defecto, máximo 50.
+- Las rutas fijas (`dashboard`, `resenas-recientes`, `estadisticas`) van **antes** de `/:id`; si no, Express confundiría el nombre con un id.
+
+### Respuesta de `GET /juegos`
+
+```json
+{
+  "juegos": [ { "_id": "…", "titulo": "…", "generos": ["…"], "rating": 4.4, "precio": 19.99, "imagen": "https://…", "fechaLanzamiento": "…" } ],
+  "total": 500,
+  "pagina": 1,
+  "totalPaginas": 21
+}
+```
+
+La lista solo trae los campos que necesita la tarjeta (sin descripción ni reseñas), para que la respuesta pese poco.
+
+### Respuesta de `GET /juegos/dashboard`
+
+```json
+{
+  "resumen": { "total": 500, "precioPromedio": 0, "ratingPromedio": 0, "gratuitos": 0, "totalResenas": 0 },
+  "porGenero": [ { "_id": "Action", "cantidad": 0 } ],
+  "porAnio": [ { "anio": 2017, "cantidad": 0 } ],
+  "rangosPrecio": [ { "rango": "Gratis", "cantidad": 0 } ],
+  "top10": [ { "_id": "…", "titulo": "…", "rating": 4.8 } ]
+}
+```
+
+### Respuesta de `GET /juegos/resenas-recientes`
+
+```json
+[
+  { "juegoId": "…", "titulo": "…", "imagen": "https://…", "usuario": "Lucía", "puntuacion": 5, "comentario": "…", "fecha": "…" }
+]
+```
+
+---
+
+## 4. Modelo de datos
+
+Cada juego es un **documento** de la colección `juegos`. Las reseñas y los géneros van **dentro del mismo documento** (documentos embebidos y arreglos), sin tablas intermedias ni JOIN.
 
 ```json
 {
@@ -116,44 +180,90 @@ Forma de un juego (este es el "contrato" entre backend y frontend):
   "imagen": "https://…",
   "fechaLanzamiento": "2017-02-24T00:00:00.000Z",
   "resenas": [
-    { "usuario": "dani_sys", "puntuacion": 5, "comentario": "…", "fecha": "…" }
+    { "usuario": "Lucía", "puntuacion": 5, "comentario": "…", "fecha": "…" }
   ]
 }
 ```
 
+### Consultas de agregación
+
+El dashboard se calcula dentro de MongoDB con pipelines de agregación (el equivalente a `GROUP BY` en SQL):
+
+| Operador | Dónde se usa |
+|----------|--------------|
+| `$group`, `$sum`, `$avg` | Totales, promedios y conteo por género |
+| `$unwind` | Separar el arreglo de géneros (para contarlos) y el de reseñas (para ordenarlas por fecha) |
+| `$year` | Lanzamientos por año |
+| `$bucket` | Rangos de precio |
+
+Ejemplo, las reseñas recientes. Como las reseñas viven dentro de cada juego, `$unwind` convierte cada una en su propio documento para poder ordenarlas:
+
+```js
+Juego.aggregate([
+  { $unwind: '$resenas' },
+  { $sort: { 'resenas.fecha': -1 } },
+  { $limit: 20 },
+  { $project: { titulo: 1, imagen: 1, usuario: '$resenas.usuario', puntuacion: '$resenas.puntuacion' } }
+]);
+```
+
 ---
 
-## 4. Cómo correrlo
+## 5. Cómo correrlo
+
+Necesitas Node.js y una cuenta gratuita de [MongoDB Atlas](https://www.mongodb.com/atlas). En Atlas, permite tu IP en *Network Access*.
 
 **Backend**
 
 ```bash
 cd backend
 npm install
-cp .env.example .env        # y pon tu MONGODB_URI real
-npm run importar            # carga data/juegos.json a Atlas
+cp .env.example .env        # y completa MONGODB_URI con tu cadena de conexión
+npm run importar            # carga data/juegos.json a Atlas (500 juegos)
+npm run resenas             # opcional: agrega reseñas de ejemplo
 npm run dev                 # servidor en http://localhost:3000
 ```
 
 Prueba en el navegador: `http://localhost:3000/api/juegos`
 
+> En PowerShell de Windows, si `npm` da un error de scripts deshabilitados, usa `npm.cmd` en su lugar (por ejemplo, `npm.cmd run dev`).
+
 **Frontend**
 
-Abre `frontend/index.html` con la extensión Live Server de VS Code (o doble clic en el archivo). El backend debe estar corriendo.
+Abre `frontend/index.html` con la extensión Live Server de VS Code (o con doble clic en el archivo). El backend debe estar corriendo.
 
-En Atlas, recuerda permitir tu IP en *Network Access*.
+### Variables de entorno (`backend/.env`)
+
+| Variable | Para qué sirve |
+|----------|----------------|
+| `MONGODB_URI` | Cadena de conexión a Atlas |
+| `PORT` | Puerto del servidor (3000 por defecto) |
+| `RAWG_API_KEY` | Solo si vas a volver a descargar juegos de RAWG |
+
+El archivo `.env` está en `.gitignore`: nunca se sube al repositorio.
+
+### Scripts de npm
+
+| Comando | Qué hace |
+|---------|----------|
+| `npm run dev` | Servidor que se reinicia solo al guardar cambios |
+| `npm start` | Servidor normal |
+| `npm run importar` | Carga `data/juegos.json` a MongoDB (borra lo que había) |
+| `npm run resenas` | Agrega reseñas de ejemplo a 70 juegos al azar (borra las anteriores) |
+| `npm run rawg` | Descarga juegos de RAWG a `data/juegos-en.json` |
+| `npm run traducir` | Traduce las descripciones y genera `data/juegos.json` |
+
+Ojo: `npm run importar` borra la colección y la vuelve a cargar, así que las reseñas desaparecen. Si las quieres, corre `npm run resenas` después.
 
 ---
 
-## 5. Datos: ejemplo y RAWG
+## 6. De dónde salen los datos
 
-El proyecto trae un `data/juegos.json` de ejemplo con 10 juegos **sin imágenes** (la tarjeta muestra la inicial del título), solo para probar. Precios y ratings de ese archivo son ilustrativos.
-
-Para el catálogo real, usa la API de RAWG **una sola vez**:
+El repositorio ya trae el catálogo listo en `backend/data/`, así que para usar el proyecto basta con `npm run importar`. Si quieres regenerarlo desde cero:
 
 ```
-RAWG (API) ─► juegos-en.json ─► juegos.json (en español) ─► MongoDB ─► tu API ─► tu página
-   rawg           rawg             traducir                   importar    npm run dev
+RAWG (API) ─► juegos-en.json ─► juegos.json (en español) ─► MongoDB ─► API propia ─► página
+   rawg           rawg             traducir                  importar    npm run dev
 ```
 
 ```bash
@@ -164,64 +274,32 @@ npm run importar    # los sube a Atlas
 ```
 
 Detalles importantes:
-- RAWG **no trae precios**, así que el script los simula con valores al azar. Dilo en la exposición.
+
+- **RAWG no trae precios.** El script los genera al azar; son valores de ejemplo.
+- **Las reseñas iniciales son de ejemplo.** Las genera `sembrar-resenas.js`. Las que se publican desde la página sí se guardan de verdad.
 - El script de descarga se salta juegos repetidos, sin imagen, sin rating o solo para adultos, y recorta la descripción a unos 400 caracteres.
-- `npm run rawg` gasta unas 500 a 600 peticiones de tu cupo mensual de RAWG (la cuenta gratis da 20 000).
-- `npm run traducir` usa el traductor gratuito de Google, que **no es oficial**: si pone un límite o falla, el script se detiene y lo que falte queda en inglés. Vuelve a correrlo más tarde; continúa donde se quedó (guarda cada traducción en `traducciones.json`).
-- Las reseñas empiezan vacías; se crean desde la página.
-- Revisa los términos de RAWG: creo que piden mencionar/enlazar RAWG como fuente en el sitio.
+- `npm run rawg` gasta unas 500 a 600 peticiones del cupo mensual de RAWG (la cuenta gratuita da 20 000).
+- `npm run traducir` usa el traductor gratuito de Google, que **no es oficial**: si pone un límite o falla, el script se detiene y lo que falte queda en inglés. Al volver a correrlo continúa donde se quedó, porque guarda cada traducción en `traducciones.json`.
+- La API de RAWG se usa una sola vez. La página funciona con los datos de nuestra propia base, y la API key nunca llega al navegador.
 
 ---
 
-## 6. Reparto de trabajo
+## 7. Decisiones de diseño
 
-El contrato es la tabla de endpoints y la forma del JSON de arriba. Con eso, cada uno trabaja sin esperar al otro.
+- **Cliente-servidor:** separa la interfaz de los datos y la lógica. El navegador no se conecta directo a la base, porque expondría las credenciales.
+- **Base NoSQL:** un juego tiene listas (géneros, plataformas, reseñas) que caben en un solo documento JSON, y el formato coincide con el que usa la API.
+- **Paginación en el servidor:** el backend manda 24 juegos por vez con `skip` y `limit`, en lugar de los 500 de golpe.
+- **`textContent` en lugar de `innerHTML`:** las reseñas las escriben usuarios; así su texto nunca se ejecuta como HTML (evita inyección de código).
+- **Backend por capas:** si se cambiara la base de datos, solo se tocarían `services` y `models`.
 
-| Parte | Archivos | Cómo probarla sola |
-|-------|----------|--------------------|
-| **Backend** | todo `backend/src/` y `data/` | Navegador o Thunder Client / Postman |
-| **Frontend** | todo `frontend/` | Con el backend corriendo |
+## Posibles mejoras
 
-Si lo haces tú solo, estudia en este orden: `models → services → controllers → routes → app.js → server.js`, y luego `api.js → ui.js → main.js`.
-
----
-
-## 7. Preguntas que te pueden hacer
-
-**¿Por qué cliente-servidor?**
-Separa responsabilidades: la interfaz por un lado, los datos y la lógica por otro. El navegador no puede (ni debe) conectarse directo a la base, porque expondría las credenciales.
-
-**¿Por qué una base NoSQL?**
-Un juego tiene géneros, plataformas y reseñas, que son listas. En MongoDB todo eso vive dentro de un solo documento JSON, sin tablas intermedias ni JOIN. Además, el formato coincide con el que usa la API.
-
-**¿Qué es un documento embebido?**
-Las reseñas están dentro del juego (`resenas: [...]`), no en otra colección. Conviene cuando siempre se leen junto con el padre.
-
-**¿Para qué sirve cada capa?**
-Ver tabla de la sección 1. Idea clave: si mañana cambias de MongoDB a otra base, solo se toca `services` y `models`.
-
-**¿Por qué el frontend no llama directo a RAWG?**
-Porque la API key quedaría visible en el navegador, y dependeríamos de que RAWG esté disponible. Así, RAWG se usa una vez y nuestros datos viven en nuestra base.
-
-**¿Qué es CORS y por qué `app.use(cors())`?**
-El navegador bloquea peticiones entre orígenes distintos (frontend y backend están en puertos diferentes). `cors()` le dice que está permitido.
-
-**¿Qué hace `aggregate` en `/estadisticas`?**
-Es un pipeline: agrupa documentos y calcula totales y promedios dentro de la base. `$unwind` separa el arreglo de géneros para poder contar cada uno.
-
-**¿Por qué `/estadisticas` va antes de `/:id`?**
-Express revisa las rutas en orden. Si `/:id` fuera primero, tomaría "estadisticas" como si fuera un id.
-
-**¿Qué pasa si mandan un id inválido?**
-Mongoose lanza un `CastError`; el middleware `manejarErrores` lo convierte en un 400 con un mensaje claro.
-
-**¿Por qué `textContent` y no `innerHTML`?**
-Las reseñas las escriben usuarios. Con `textContent` el texto nunca se ejecuta como HTML, lo que evita inyección de código (XSS).
+- Formulario en la página para agregar, editar y eliminar juegos (el backend ya lo soporta).
+- Autenticación de usuarios para las reseñas.
+- Precios reales desde otra fuente.
 
 ---
 
-## 8. Ideas si sobra tiempo
+## Créditos
 
-- Formulario para agregar/editar/eliminar juegos desde la página (el backend ya lo soporta).
-- Gráfico de juegos por género usando `/juegos/estadisticas`.
-- Paginación en `GET /juegos` con `limit` y `skip`.
+Datos e imágenes: [RAWG](https://rawg.io). Los precios y las reseñas iniciales son datos de ejemplo.
